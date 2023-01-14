@@ -19,10 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_133643) do
     t.text "description"
     t.text "location"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false=======
-ActiveRecord::Schema[7.0].define(version: 2023_01_14_114417) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
