@@ -6,32 +6,37 @@ class BoatsController < ApplicationController
   end
 
   def show
-
+    authorize @boat
   end
 
   def new
     @boat = Boat.new
+    authorize @restaurant # Add this line
   end
 
   def create
+    # @boat = Boat.new(boat_params)
+    # @boat.user = current_user
+    # @boat.save
     @boat = Boat.new(boat_params)
     @boat.user = current_user
-    @boat.save
+    authorize @boat # Add this line
   end
 
   def edit
-
-
+    authorize @restaurant # Add this line
   end
 
   def update
 
     @boat = Boat.new(boat_params)
+    authorize @restaurant # Add this line
     @boat.save
   end
 
   def delete
     @boat = Boat.delete
+    authorize @restaurant # Add this line
   end
 
   private
