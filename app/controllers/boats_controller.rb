@@ -2,7 +2,9 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: %i[show edit update delete]
 
   def index
-    @boats = Boat.all
+
+    @boats = policy_scope(Boat)
+
   end
 
   def show

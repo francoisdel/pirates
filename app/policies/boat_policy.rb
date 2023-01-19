@@ -13,6 +13,10 @@ class BoatPolicy < ApplicationPolicy
       # user: the `current_user` signed in with Devise
     end
 
+    def resolve
+      scope.all
+    end
+
     def destroy?
       record.user == user
     end
