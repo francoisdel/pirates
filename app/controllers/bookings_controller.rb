@@ -13,11 +13,14 @@ class BookingsController < ApplicationController
     redirect_to boat_path(@boat)
   end
 
+  def index
 
-  def show
-    @booking =  Boat.find(params[:id])
+    #je joins la table boats (sans s car on join sur le modele) et je filtre
+    #ensuite les records tels que le boat_user est le current_user
+    @user_bookings = Booking.joins(:boat).where(boat: {user: current_user})
 
   end
+
 
   private
 

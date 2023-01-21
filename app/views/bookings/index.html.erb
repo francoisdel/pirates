@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <% @user_bookings.each do |booking| %>
+      <div class="col-sm-3 mb-3">
+        <div class="card">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80">
+          <div class="card-body">
+            <p class="card-text">Price: <%= booking.boat.price %></p>
+            <p class="card-text">Location: <%= booking.boat.location %></p>
+            <p class="card-text">Description: <%= booking.boat.description %></p>
+            <p class="card-text">User Email: <%= booking.user.email %></p>
+            <p class="card-text">Booking start date: <%= booking.start_date %></p>
+            <p class="card-text">Booking end date: <%= booking.end_date %></p>
+
+
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
