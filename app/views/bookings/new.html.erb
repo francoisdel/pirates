@@ -1,8 +1,11 @@
 <!-- app/views/bookings/new.html.erb -->
 <h1>New booking</h1>
+<h2> You are booking <%= @boat.name %> </h2>
 <%= simple_form_for [@boat, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit "Create Booking", class: "btn btn-primary" %>
 <% end %>
 
+
+<%# Compare this snippet from app/views/bookings/show.html.erb: %>
