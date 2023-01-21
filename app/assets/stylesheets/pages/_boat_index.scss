@@ -1,0 +1,22 @@
+.boat-index{
+  &-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    text-align: center;
+  }
+  &-card{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 8px;
+    &-img{
+      img{
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+    }
+  }
+}
