@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
 
-<h1>List of Boats</h1>
-<table>
-  <tr>
 
-    <th>Price</th>
-    <th>Location</th>
-    <th>Description</th>
-    <th>User</th>
-  </tr>
-  <% @boats.each do |boat| %>
-    <tr>
-      
-      <td><%= boat.price %></td>
-      <td><%= boat.location %></td>
-      <td><%= boat.description %></td>
-      <td><%= boat.user.email %></td>
-    </tr>
-  <% end %>
-</table>
-
-</body>
-</html>
+<div class="container-fluid">
+  <div class="boat-index-container">
+    <% @boats.each do |boat| %>
+      <div class="boat-index-card">
+        <div class="boat-index-card-img">
+          <%= image_tag "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80" %>
+        </div>
+        <div class="boat-index-card-info">
+          <p>
+            <%= boat.price %>
+          </p>
+          <p><%= boat.location %></p>
+          <p><%= boat.description %></p>
+          <p><%= boat.user.email %></p>
+          <div class="boat-index-card-btn">
+            <%= link_to "More info", boat_path(boat)%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
