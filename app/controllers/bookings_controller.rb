@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.boat = @boat
     @booking.user = current_user
     @booking.save
-    redirect_to boat_path(@boat)
+    redirect_to bookings_path
   end
 
   def index
@@ -18,6 +18,8 @@ class BookingsController < ApplicationController
     #je joins la table boats (sans s car on join sur le modele) et je filtre
     #ensuite les records tels que le boat_user est le current_user
     @user_bookings = Booking.joins(:boat).where(boat: {user: current_user})
+
+    @bookings  = current_user.bookings
 
   end
 

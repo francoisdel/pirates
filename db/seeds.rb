@@ -24,6 +24,7 @@ Boat.destroy_all
 # Create fake boats
 50.times do
   Boat.create(
+    name: Faker::Creature::Cat.name,
     price: Faker::Commerce.price,
     location: Faker::Address.city,
     description: Faker::Lorem.paragraph,
