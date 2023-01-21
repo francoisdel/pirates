@@ -29,5 +29,6 @@ Boat.destroy_all
     location: Faker::Address.city,
     description: Faker::Lorem.paragraph,
     user: User.all.sample
+    
   )
 end
