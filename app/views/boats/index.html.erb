@@ -1,21 +1,18 @@
-
-
 <div class="container-fluid">
-  <div class="boat-index-container">
+  <div class="row">
     <% @boats.each do |boat| %>
-      <div class="boat-index-card">
-        <div class="boat-index-card-img">
-          <%= image_tag "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80" %>
-        </div>
-        <div class="boat-index-card-info">
-          <p>
-            <%= boat.price %>
-          </p>
-          <p><%= boat.location %></p>
-          <p><%= boat.description %></p>
-          <p><%= boat.user.email %></p>
-          <div class="boat-index-card-btn">
-            <%= link_to "More info", boat_path(boat)%>
+      <div class="col-sm-3 mb-3">
+        <div class="card">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80">
+          <div class="card-body">
+            <p class="card-text">Price: <%= boat.price %></p>
+            <p class="card-text">Location: <%= boat.location %></p>
+            <p class="card-text">Description: <%= boat.description %></p>
+            <p class="card-text">User Email: <%= boat.user.email %></p>
+            <div class="text-center">
+              <%= link_to "More info", boat_path(boat), class: "btn btn-primary" %>
+              <%= link_to "More info", new_boat_booking_path(boat), class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>

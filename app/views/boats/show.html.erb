@@ -1,3 +1,13 @@
-<h1> <%= @boat.price %> </h1>
-<p> <%= @boat.description %> </p>
-<p> <%= @boat.location %> </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1><%= @boat.price %></h1>
+      <p><%= @boat.description %></p>
+      <p><%= @boat.location %></p>
+      <%= link_to "Book this boat", new_boat_booking_path(@boat), class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-4">
+      <div id="map" class="sticky-top"></div>
+    </div>
+  </div>
+</div>
