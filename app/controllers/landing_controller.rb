@@ -1,4 +1,14 @@
-class BoatsController < ApplicationController
+class LandingController < ApplicationController
+  def landing
+    @tabs = true
+    @boats = Boat.all.limit(4)
+  end
+
+  # def index
+  #   content_for :skip_navbar, true
+  #   @boats = Boat.all
+  # end
+
   before_action :set_boat, only: %i[edit update delete]
 
   def index
@@ -44,5 +54,6 @@ class BoatsController < ApplicationController
   def boat_params
     params.require(:boat).permit(:name, :price, :description, :location)
   end
+
 
 end
