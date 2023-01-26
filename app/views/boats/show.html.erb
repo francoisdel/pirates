@@ -6,13 +6,17 @@
     <div class="hero-wrapper">
       <div class="hero-split">
         <h1>Take a little time to breathe</h1>
+        <p class="margin-bottom-24px">Boat category: <%= @boat.boat_type %></p>
         <p class="margin-bottom-24px">Price per hour: $<%= @boat.price %></p>
         <p class="margin-bottom-24px">About this boat: <%= @boat.description %></p>
         <p class="margin-bottom-24px">Location info : <%= @boat.location %></p>
       </div>
-      <div class="hero-split"><img src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a2a3312aae1_placeholder%203.svg" loading="lazy" alt="" class="shadow-two"></div>
+      <div class="hero-split"><img src="<%= @boat.photo %>" loading="lazy" alt="" class="shadow-two"></div>
     </div>
   </div>
+<div class="text-center">
+  <%= link_to "Book Now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
+</div>
   <div class="testimonials">
     <h2 class="centered-heading">What others customers think</h2>
     <div class="cardcontainer">

@@ -2,8 +2,24 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: %i[edit update delete]
 
   def index
-    @boats = Boat.all
+    if params[:query].present?
+      @boats = Boat.where(location: params[:query])
+    else
+      @boats = Boat.all
+    end
+    @unique_boats = @boats.uniq{|b| [b.location, b.photo]}
   end
+
+  def quote
+    start_time = params[:start_time]
+    end_time = params[:end_time]
+    boat_id = params[:boat_id]
+    hours_booked = ((end_time - start_time) / 3600).round
+    boat = Boat.find(boat_id)
+    price = hours_booked * boat.price
+    render json: {price: price}
+  end
+
 
   def show
     @boat = Boat.find(params[:id])

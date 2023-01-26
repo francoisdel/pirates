@@ -9,7 +9,17 @@
   </section>
 
   </div>
-  <div class="navbar-logo-center wf-section"></div>
+<div>
+<%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a boat"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+
   <section class="features-list wf-section">
     <div class="container">
       <div class="features-wrapper-two">

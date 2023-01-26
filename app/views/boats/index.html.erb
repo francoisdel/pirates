@@ -1,17 +1,19 @@
 <div class="container-fluid">
   <div class="row">
-    <% @boats.each do |boat| %>
+    <% @unique_boats.each do |unique_boat| %>
+
       <div class="col-sm-3 mb-3">
+
         <div class="card">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80">
+
+          <img class="card-img-top" img src="<%= unique_boat.photo %>">
           <div class="card-body">
-            <h5 class="card-title"><%= boat.name %></h5>
-            <p class="card-text">Price: <%= boat.price %></p>
-            <p class="card-text">Location: <%= boat.location %></p>
-            <p class="card-text">Description: <%= boat.description %></p>
-            <p class="card-text">User Email: <%= boat.user.email %></p>
+            <h5 class="card-title"><%= unique_boat.name %></h5>
+            <p class="card-text">Price $$: <%= unique_boat.price %></p>
+            <p class="card-text">Location: <%= unique_boat.location %></p>
+            <p class="card-text">Description: <%= unique_boat.description %></p>
             <div class="text-center">
-              <%= link_to "More info", boat_path(boat), class: "btn btn-primary" %>
+              <%= link_to "More info", boat_path(unique_boat), class: "btn btn-primary" %>
             </div>
           </div>
         </div>

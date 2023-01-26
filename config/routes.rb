@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#landing"
+  root to: "landing#landing"
   get 'landing', to: 'landing#landing'
+  get '/bookings/quote/:boat_id/:start_date/:end_date', to: 'bookings#quote'
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
