@@ -1,25 +1,19 @@
-class BoatsController < ApplicationController
+class LandingController < ApplicationController
+  def landing
+    @tabs = true
+    @boats = Boat.all.limit(4)
+  end
+
+  # def index
+  #   content_for :skip_navbar, true
+  #   @boats = Boat.all
+  # end
+
   before_action :set_boat, only: %i[edit update delete]
 
   def index
-    if params[:query].present?
-      @boats = Boat.where(location: params[:query])
-    else
-      @boats = Boat.all
-    end
-    @unique_boats = @boats.uniq{|b| [b.location, b.photo]}
+    @boats = Boat.all
   end
-
-  def quote
-    start_time = params[:start_time]
-    end_time = params[:end_time]
-    boat_id = params[:boat_id]
-    hours_booked = ((end_time - start_time) / 3600).round
-    boat = Boat.find(boat_id)
-    price = hours_booked * boat.price
-    render json: {price: price}
-  end
-
 
   def show
     @boat = Boat.find(params[:id])
@@ -60,5 +54,6 @@ class BoatsController < ApplicationController
   def boat_params
     params.require(:boat).permit(:name, :price, :description, :location)
   end
+
 
 end

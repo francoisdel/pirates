@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_144517) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_26_130619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_144517) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
+    t.string "boat_type"
+    t.string "photo"
     t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
@@ -34,6 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_144517) do
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "booking_price"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -46,11 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_144517) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Name"
-    t.string "Password"
-    t.string "Email"
-    t.string "name"
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -59,3 +57,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_144517) do
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users"
 end
+

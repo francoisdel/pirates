@@ -1,26 +1,19 @@
-<% if @display_card_category %>
-  <%= render 'shared/card_category' %>
-<% end %>
 <body class="body">
   <div class="details-container">
     <div class="hero-wrapper">
       <div class="hero-split">
         <h1>Take a little time to breathe</h1>
-        <p class="margin-bottom-24px">Boat category: <%= @boat.boat_type %></p>
-        <p class="margin-bottom-24px">Price per hour: $<%= @boat.price %></p>
-        <p class="margin-bottom-24px">About this boat: <%= @boat.description %></p>
-        <p class="margin-bottom-24px">Location info : <%= @boat.location %></p>
+        <p class="margin-bottom-24px">Price: <%= boat.price %></p>
+        <p class="margin-bottom-24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
+        <p class="margin-bottom-24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
       </div>
-      <div class="hero-split"><img src="<%= @boat.photo %>" loading="lazy" alt="" class="shadow-two"></div>
+      <div class="hero-split"><img src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a2a3312aae1_placeholder%203.svg" loading="lazy" alt="" class="shadow-two"></div>
     </div>
   </div>
-<div class="text-center">
-  <%= link_to "Book Now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
-</div>
   <div class="testimonials">
     <h2 class="centered-heading">What others customers think</h2>
     <div class="cardcontainer">
-      <div class="row">
+      <div class="w-row">
         <div class="w-col w-col-6">
           <div class="testimonial-info-three"><img src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a28a812aad9_placeholder%202.svg" loading="lazy" alt="" class="testimonial-image-2">
             <div>
@@ -30,16 +23,14 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="w-col w-col-6">
-            <div class="testimonial-info-three"><img src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a28a812aad9_placeholder%202.svg" loading="lazy" alt="" class="testimonial-image-2">
-              <div>
-                <h3 class="testimonial-main-heading">Author Name</h3>
-                <div>VP of Company</div>
-                <p class="testimonial-text-two">“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
-              </div>
+        <div class="w-col w-col-6">
+          <div class="testimonial-info-three"><img src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a28a812aad9_placeholder%202.svg" loading="lazy" alt="" class="testimonial-image-2">
+            <div>
+              <h3 class="testimonial-main-heading">Author Name</h3>
+              <div>VP of Company</div>
+              <p class="testimonial-text-two">“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
