@@ -2,6 +2,15 @@ class LandingController < ApplicationController
   def landing
     @tabs = true
     @boats = Boat.all.limit(4)
+    @boats_to_display = Boat.all
+    @markers = @boats_to_display.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {boat: boat}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   # def index
